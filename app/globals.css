@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adding Helvetica Now Text Thin fonts */
+@font-face {
+  font-family: "Helvetica Now Text";
+  src: url("/fonts/HelveticaNowText-Thin.woff2") format("woff2"), url("/fonts/HelveticaNowText-Thin.woff")
+    format("woff"), url("/fonts/HelveticaNowText-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Now Text";
+  src: url("/fonts/HelveticaNowText-ThinItalic.woff2") format("woff2"), url("/fonts/HelveticaNowText-ThinItalic.woff")
+    format("woff"), url("/fonts/HelveticaNowText-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Now Text";
+  src: url("/fonts/helveticanowtext-bold-demo.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Now Text";
+  src: url("/fonts/helveticanowtext-black-demo.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Now Text";
+  src: url("/fonts/helveticanowtext-bolditalic-demo.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Now Text";
+  src: url("/fonts/helveticanowtext-blackitalic-demo.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Added font-weight 300 for thin/light text */
+@font-face {
+  font-family: "Helvetica Now Text";
+  src: url("/fonts/helveticanowtext-bold-demo.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --primary: 255, 77, 0;
+  --primary-foreground: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.overflow-y-auto {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.dark {
+  --primary: 255, 77, 0;
+  --primary-foreground: 0, 0, 0;
+}
+
+@layer utilities {
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
